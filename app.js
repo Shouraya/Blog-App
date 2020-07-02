@@ -101,7 +101,21 @@ app.put("/blogs/:id", function(req,res){
 	});
 });	
 
+//DESTROY or DELETE Route
+app.delete("/blogs/:id", function(req,res){
+	//destroy blog
+	Blog.findByIdAndRemove(req.params.id, function(err){
+		if(err){
+			res.redirect("/blogs");
+		} else {
+			//redirect
+			res.redirect("/blogs");
+		}
+	});
+});
+
 //setting up port
-app.listen(3000, function(){
+var port = process.env.PORT || 3000;
+app.listen(port, function(){
 	console.log("Blog Server has Started!");
 })
