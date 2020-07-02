@@ -100,21 +100,6 @@ app.put("/blogs/:id", function(req,res){
 		}
 	});
 });	
-		
-
-
-//DESTROY or DELETE Route
-app.delete("/blogs/:id", function(req,res){
-	//destroy blog
-	Blog.findByIdAndRemove(req.params.id, function(err){
-		if(err){
-			res.redirect("/blogs");
-		} else {
-			//redirect
-			res.redirect("/blogs");
-		}
-	});
-});
 
 //setting up port
 app.listen(3000, function(){
