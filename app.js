@@ -5,7 +5,7 @@ var express = require("express"),
 	methodOverride = require("method-override"),
 	expressSanitizer = require("express-sanitizer");
 //setting up mongoose
-mongoose.connect("mongodb+srv://Shouraya:Shouraya2406@cluster0.fphhj.mongodb.net/restful_blog_app?retryWrites=true&w=majority", {
+mongoose.connect(process.env.DATABASEURL, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useFindAndModify: false,
