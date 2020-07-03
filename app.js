@@ -5,10 +5,11 @@ var express = require("express"),
 	methodOverride = require("method-override"),
 	expressSanitizer = require("express-sanitizer");
 //setting up mongoose
-mongoose.connect("mongodb://localhost/restful_blog_app", {
+mongoose.connect("mongodb+srv://Shouraya:Shouraya2406@cluster0.fphhj.mongodb.net/restful_blog_app?retryWrites=true&w=majority", {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
-	useFindAndModify: false
+	useFindAndModify: false,
+	useCreateIndex: true
 });
 //default render file to be ejs
 app.set("view engine", "ejs");
